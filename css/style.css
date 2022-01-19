@@ -1,51 +1,115 @@
+/*Paleta de colores*/
 :root{
     --primario: #9C27B0;
-    --secundario: #FFCE00;
+    --primarioOscuro: #89119D;
+    --secundario:#FFCE00;
     --secundarioOscuro: rgb(233,287,2);
-    --blanco: FFF;
     --negro: #000;
+    --blanco: rgb(255, 255, 255);
 
-    --fuentePrincipal: 'Staaliches',cursive;
+    --fuentePrincipal: 'Staatliches', cursive;
 }
 
-/* apply a natural box layout model to all elements, but allowing components to change */
-html {
-    box-sizing: border-box;
-    font-size: 62.5%;/*1 rem = 10px*/
-  }
-  *, *:before, *:after {
+/*Se añaden variables globales*/
+
+html{
+    box-sizing: inherit;        
+    font-size: 62.5%;
+}
+/*Hay que repasar esto porque no recuerdo para que sirve*/
+*,*:before,*:after{
     box-sizing: inherit;
-  }
+} 
 
-  body{
-      background-color: #9C27B0;
-      font-size: 1.6rem;
-      line-height: 1.5;
-  }
+body{
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--blanco);
+}
 
-  /*Configuración de parrafos*/
 p{
     font-size: 1.8rem;
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--blanco);
+    font-family: Helvetica,Arial, sans-serif;
+    color:var(--blanco);
 }
 
 a{
     text-decoration: none;
 }
 
-
 img{
-    width: 100%;
-}
-
-.contenedor{
-    max-width: 120rem;
-    margin: 0 auto;
+    max-width:100%;
 }
 
 h1,h2,h3{
-    text-align: center;
-    color: var(--secundario);
+    text-align: center;    
+    color:var(--secundario);
     font-family: var(--fuentePrincipal);
+    background-color: #000;
 }
+h1{font-size: 4rem;}
+h2{font-size: 3.2rem;}
+h3{font-size: 2.4rem;}
+/*Añadimos la clase contenedor*/
+.contenedor{
+    max-width: 120rem;
+    margin:0 auto;
+}
+
+.contenedor__titulo{
+    font-family: var(--fuentePrincipal);
+    color: var(--secundario);
+    font-size: 3.2rem;
+    text-align: center;
+
+}
+
+
+/*Header*/
+.header{
+    display:flex;
+    justify-content: center;
+
+}
+
+.header__logo{
+    margin: 3rem 0;
+
+}
+/*Navegacion*/
+.nav{
+    display: flex;
+    justify-content: center;
+    background-color: var(--primarioOscuro);
+    font-family: var(--fuentePrincipal);
+    padding: 1rem 0;
+    
+}
+
+.nav__pestañas{
+    color:var(--blanco);
+    font-size: 3rem;
+    margin:0 2rem;
+}
+.nav__pestañas--activo,
+.nav__pestañas:hover{
+    color:var(--secundario);
+}
+
+
+/****************************************************************
+Footer*/
+.footer{
+    padding:1rem 0;
+    background-color: var(--primarioOscuro);
+    margin-top: 2rem;
+}
+.footer__texto{
+    color: var(--blanco);
+    font-family: var(--fuentePrincipal);
+    font-size: 2rem;
+    text-align: center;
+}
+
+
